@@ -34,7 +34,6 @@
       font-size: 14px;
       padding: 4px 18px;
       border: none;
-      color: rgb(48, 48, 48);
 
       &:hover {
         cursor: pointer;
@@ -74,6 +73,24 @@
 
       &:active {
         background-color: #818181;
+      }
+    }
+
+    @media (max-width: 800px) {
+
+      .counter-app-container {
+        height: 50%;
+      }
+
+      .count {
+        font-size: 150px;
+        margin: 300px 0 80px 0;
+
+      }
+
+      .counter-btn {
+        font-size: 26px;
+        padding: 10px 70px;
       }
     }
   </style>
