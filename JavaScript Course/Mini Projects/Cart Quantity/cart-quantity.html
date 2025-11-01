@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    p {
+      font-size: 24px;
+      margin: 40px 0;
+    }
+
+    button {
+      padding: 4px 6px;
+      font-size: 16px;
+      margin: 0 10px 0 0;
+    }
+  </style>
+  <title>Cart Quantity</title>
+</head>
+
+<body>
+  <p id="title"></p>
+  <button class="add-1" onclick="addToCart(1)">
+    Add to Cart
+  </button>
+  <button class="add-2" onclick="addToCart(2)">
+    +2
+  </button>
+  <button class="add-3" onclick="addToCart(3)">
+    +3
+  </button>
+  <button class="reset-cart" onclick="resetCart()">
+    Reset Cart
+  </button>
+
+  <script>
+    const cartQuantity = document.getElementById('title')
+    let cart = 0;
+
+    cartQuantity.textContent = `Cart quantity: ${cart}`;
+
+    function addToCart(x) {
+      cart += x;
+      cartQuantity.textContent = `Cart quantity: ${cart}`;
+    }
+    function resetCart() {
+      cart = 0;
+      cartQuantity.textContent = `Cart quantity: ${cart}`;
+    }
+  </script>
+</body>
+
+</html>
