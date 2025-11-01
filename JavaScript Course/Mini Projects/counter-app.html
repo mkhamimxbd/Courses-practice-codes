@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .counter-app-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 70%;
+    }
+
+    .count {
+      font-size: 82px;
+    }
+
+    .btns-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .counter-btn {
+      margin: 10px 0 0 0;
+      font-size: 14px;
+      padding: 4px 18px;
+      border: none;
+      color: rgb(48, 48, 48);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .add {
+      background-color: #00c900;
+
+      &:hover {
+        background-color: #00bb00;
+      }
+
+      &:active {
+        background-color: #00b100;
+      }
+    }
+
+    .remove {
+      background-color: #d80101;
+
+      &:hover {
+        background-color: #bb0000;
+      }
+
+      &:active {
+        background-color: #b10000;
+      }
+    }
+
+    .reset {
+      background-color: #aaaaaa;
+
+      &:hover {
+        background-color: #979797;
+      }
+
+      &:active {
+        background-color: #818181;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="counter-app-container">
+    <p id="count" class="count"></p>
+    <div class="btns-container">
+      <button class="add counter-btn" onclick="add()">Add</button>
+      <button class="remove counter-btn" onclick="remove()">Remove</button>
+      <button class="reset counter-btn" onclick="reset()">Reset</button>
+    </div>
+  </div>
+
+  <script>
+    const countEl = document.getElementById('count');
+    let count = 0;
+    countEl.textContent = `${count}`;
+
+    function add() {
+      count++;
+      countEl.textContent = `${count}`;
+    }
+
+    function remove() {
+      count--;
+      countEl.textContent = `${count}`;
+    }
+
+    function reset() {
+      count = 0;
+      countEl.textContent = `${count}`;
+    }
+  </script>
+</body>
+
+</html>
