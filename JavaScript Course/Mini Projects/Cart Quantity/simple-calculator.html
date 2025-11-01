@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+  </style>
+  <title>Mini Calculator</title>
+</head>
+<body>
+  <p id="calculation-field">Calculation: </p>
+  <button class="num" onclick="insert('1')">1</button>
+  <button class="num" onclick="insert('2')">2</button>
+  <button class="num" onclick="insert('3')">3</button>
+  <button class="num" onclick="insert('4')">4</button>
+  <button class="num" onclick="insert('5')">5</button>
+  <button class="num" onclick="insert('6')">6</button>
+  <button class="num" onclick="insert('7')">7</button>
+  <button class="num" onclick="insert('8')">8</button>
+  <button class="num" onclick="insert('9')">9</button>
+  <button class="operation" onclick="insert(' + ')">+</button>
+  <button class="operation" onclick="insert(' - ')">-</button>
+  <button class="operation" onclick="insert(' * ')">*</button>
+  <button class="operation" onclick="insert(' / ')">/</button>
+  <button class="result" onclick="result()">=</button>
+
+  <script>
+    let calculation = '';
+    const calculationField = document.getElementById('calculation-field')
+
+    calculationField.textContent = `Calculation: ${calculation}`
+
+    function insert(x) {
+      calculation += x;
+      calculationField.textContent = `Calculation: ${calculation}`
+    }
+
+    function result() {
+      calculation = eval(calculation);
+      calculationField.textContent = `Calculation: ${calculation}`
+      calculation = '';
+    }
+  </script>
+</body>
+</html>
