@@ -1,8 +1,14 @@
-const passwordArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l']
+// const age = 40;
 
-function generatePassword() {
-  for (let i = 0; i < length.passwordArray; i++) {
+// if (age < 18) {
+//   console.log('Not eligible');
+// } else {
+//   console.log('Eligible');
+// }
 
-  }
 
-}
+const age = 20;
+
+if (age < 12 && age >= 18) {
+  console.log('Student');
+} else if (age < )
