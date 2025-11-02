@@ -21,33 +21,48 @@
 
 <body>
   <p id="title"></p>
-  <button class="add-1" onclick="addToCart(1)">
+  <button onclick="addToCart(1)">
     Add to Cart
   </button>
-  <button class="add-2" onclick="addToCart(2)">
-    +2
+  <button onclick="removeFromCart(1)">
+    Remove From Cart
   </button>
-  <button class="add-3" onclick="addToCart(3)">
-    +3
-  </button>
-  <button class="reset-cart" onclick="resetCart()">
+  <button onclick="resetCart()">
     Reset Cart
   </button>
 
   <script>
     const cartQuantity = document.getElementById('title')
     let cart = 0;
+    const cartMaxCapacity = 10;
 
     cartQuantity.textContent = `Cart quantity: ${cart}`;
 
     function addToCart(x) {
+      if (cart < cartMaxCapacity)  {
       cart += x;
       cartQuantity.textContent = `Cart quantity: ${cart}`;
+    } else if (cart >= cartMaxCapacity) {
+      alert('The cart is full');
+      cart = cart;
     }
+    }
+
+    function removeFromCart(y) {
+      if (cart <= cartMaxCapacity && cart > 0) {
+        cart -= y;
+        cartQuantity.textContent = `Cart quantity: ${cart}`;
+      } else if (cart <= 0) {
+        alert('Not enough items in the cart');
+      }
+    }
+
     function resetCart() {
       cart = 0;
       cartQuantity.textContent = `Cart quantity: ${cart}`;
     }
+
+    
   </script>
 </body>
 
