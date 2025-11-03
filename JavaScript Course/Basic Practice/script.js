@@ -1,11 +1,19 @@
 const a = document.getElementById('a');
 
 const user = {
-  name: '',
-  password: 'smith1234'
+  name: 'Hamim',
+  password: 'smith1234',
+  operationgSystem: 'Windows 11' 
 };
 
-user.name = 'Hamim';
+console.log(user);
 
-console.log(user.name);
+user.status = 'online';
+
+console.log(user);
+
+delete user.operationgSystem;
+
+console.log(user);
+
 console.log(typeof user.name);
