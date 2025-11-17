@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Head Tails</title>
+</head>
+
+<body>
+  <button id="flip-coin-btn" onclick="flipCoin()">Flip Coin</button>
+  <p id="result-el"></p>
+
+  <script>
+    const resultEl = document.getElementById('result-el');
+    resultEl.textContent = 'Result: ';
+
+
+    function flipCoin() {
+      const randomNumber = Math.floor(Math.random() * 2);
+      let result = '';
+      
+      if (randomNumber === 0) {
+        result = 'Heads';
+      } else if (randomNumber === 1) {
+        result = 'Tails';
+      }
+      resultEl.textContent = `Result: ${result}`;
+    }
+  </script>
+</body>
+
+</html>
