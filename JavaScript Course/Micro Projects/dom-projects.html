@@ -28,9 +28,16 @@
     </p>
     <p>Orders under $40 = +$10 shipping.</p>
     <p>Orders over $40 = FREE shipping.</p>
-    <input type="number" class="shipping-fee-calculator-project-cost-input" placeholder="Cost of order" onkeydown="handleCostKeyDown()">
+    <input type="number" class="shipping-fee-calculator-project-cost-input" placeholder="Cost of order"
+      onkeydown="handleCostKeyDown()">
     <button class="shipping-fee-calculator-project-cost-calculate-btn" onclick="calculateTotalCost()">Calculate</button>
     <p class="shipping-fee-calculator-project-total-cost">Total Cost: $0</p>
+  </section>
+
+  <section class="text-clone-project">
+    <p>Text Clone</p>
+    <input type="text" class="text-clone-project-input" onkeyup="cloneText()">
+    <p class="js-cloned-text-el"></p>
   </section>
 
   <script>
@@ -45,7 +52,7 @@
 
     function calculateTotalCost() {
       const inputEl = document.querySelector('.shipping-fee-calculator-project-cost-input');
-      let cost = Number(inputEl.value)*100;
+      let cost = Number(inputEl.value) * 100;
 
       if (cost < 4000 && cost > 0) {
         cost += 1000;
@@ -54,7 +61,7 @@
       }
 
       document.querySelector('.shipping-fee-calculator-project-total-cost').
-        innerHTML = `Total Cost: $${cost/100}`;
+        innerHTML = `Total Cost: $${cost / 100}`;
 
       inputEl.value = '';
     }
@@ -65,6 +72,11 @@
       }
 
       inputEl.value = '';
+    }
+
+    function cloneText() {
+      document.querySelector('.js-cloned-text-el').innerHTML =
+        document.querySelector('.text-clone-project-input').value;
     }
   </script>
 </body>
