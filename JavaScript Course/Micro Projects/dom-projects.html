@@ -32,6 +32,13 @@
       border-radius: 22px;
       font-size: 13px;
       padding: 12px 16px;
+      cursor: pointer;
+    }
+
+    .is-subscribed {
+      background-color: #f0f0f0;
+      color: black;
+      font-weight: 600;
     }
 
     .shipping-fee-calculator-project-cost-input {
@@ -48,6 +55,12 @@
       color: white;
       background-color: green;
       border-radius: 4px;
+      transition: all 0.15s ease;
+      
+      &:hover {
+        cursor: pointer;
+        background-color: #59a859;
+      }
     }
 
     .text-clone-project-input {
@@ -98,8 +111,10 @@
       const youtubeSubscribeBtnEl = document.querySelector('.youtube-subscribe-button-project-btn');
       if (youtubeSubscribeBtnEl.innerText === 'Subscribe') {
         youtubeSubscribeBtnEl.innerText = 'Subscribed';
+        youtubeSubscribeBtnEl.classList.add('is-subscribed');
       } else if (youtubeSubscribeBtnEl.innerText === 'Subscribed') {
         youtubeSubscribeBtnEl.innerText = 'Subscribe';
+        youtubeSubscribeBtnEl.classList.remove('is-subscribed');
       }
     }
 
