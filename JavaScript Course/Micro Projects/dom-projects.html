@@ -19,7 +19,9 @@
     .shipping-fee-calculator-project-title,
     .shipping-fee-calculator-project-total-cost,
     /* .shipping-fee-calculator-project-calculation-description, */
-    .shipping-fee-calculator-project-total-cost {
+    .shipping-fee-calculator-project-total-cost,
+    .text-clone-project-title,
+    .js-cloned-text-el {
       font-size: 14px;
     }
 
@@ -46,6 +48,15 @@
       color: white;
       background-color: green;
       border-radius: 4px;
+    }
+
+    .text-clone-project-input {
+      padding: 6px;
+      font-size: 13px;
+    }
+
+    .js-cloned-text-el {
+      font-family: monospace;
     }
   </style>
 </head>
@@ -77,8 +88,8 @@
   </section>
 
   <section class="text-clone-project">
-    <p>Text Clone</p>
-    <input type="text" class="text-clone-project-input" onkeyup="cloneText()">
+    <p class="text-clone-project-title">Text Clone</p>
+    <input type="text" class="text-clone-project-input" placeholder="Type anything..." onkeyup="cloneText()">
     <p class="js-cloned-text-el"></p>
   </section>
 
