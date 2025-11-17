@@ -45,16 +45,16 @@
 
     function calculateTotalCost() {
       const inputEl = document.querySelector('.shipping-fee-calculator-project-cost-input');
-      let cost = Number(inputEl.value);
+      let cost = Number(inputEl.value)*100;
 
-      if (cost < 40 && cost > 0) {
-        cost += 10;
-      } else if (cost => 40) {
+      if (cost < 4000 && cost > 0) {
+        cost += 1000;
+      } else if (cost => 4000) {
         cost;
       }
 
       document.querySelector('.shipping-fee-calculator-project-total-cost').
-        innerHTML = `Total Cost: $${cost}`;
+        innerHTML = `Total Cost: $${cost/100}`;
 
       inputEl.value = '';
     }
