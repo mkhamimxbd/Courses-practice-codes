@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <section class="youtube-subscribe-button-project">
+    <p class="youtube-subscribe-button-project-title">
+      YouTube Subscribe Button
+    </p>
+    <button class="youtube-subscribe-button-project-btn" onclick="subscribed()">
+      Subscribe
+    </button>
+  </section>
+
+  <script>
+    
+    function subscribed() {
+      const youtubeSubscribeBtnEl = document.querySelector('.youtube-subscribe-button-project-btn');
+      if (youtubeSubscribeBtnEl.innerText === 'Subscribe') {
+        youtubeSubscribeBtnEl.innerText = 'Subscribed';
+      } else if (youtubeSubscribeBtnEl.innerText === 'Subscribed') {
+        youtubeSubscribeBtnEl.innerText = 'Subscribe';
+      }
+    }
+  </script>
+</body>
+</html>
