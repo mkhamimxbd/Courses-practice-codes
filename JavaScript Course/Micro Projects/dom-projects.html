@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM Projects</title>
   <style>
-
+    section {
+      margin-bottom: 60px;
+    }
   </style>
 </head>
 
@@ -20,6 +22,17 @@
     </button>
   </section>
 
+  <section class="shipping-fee-calculator-project">
+    <p class="shipping-fee-calculator-project-title">
+      Shipping Fee Calculator
+    </p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input type="number" class="shipping-fee-calculator-project-cost-input" placeholder="Cost of order" onkeydown="handleCostKeyDown()">
+    <button class="shipping-fee-calculator-project-cost-calculate-btn" onclick="calculateTotalCost()">Calculate</button>
+    <p class="shipping-fee-calculator-project-total-cost">Total Cost: $0</p>
+  </section>
+
   <script>
     function subscribed() {
       const youtubeSubscribeBtnEl = document.querySelector('.youtube-subscribe-button-project-btn');
@@ -28,6 +41,30 @@
       } else if (youtubeSubscribeBtnEl.innerText === 'Subscribed') {
         youtubeSubscribeBtnEl.innerText = 'Subscribe';
       }
+    }
+
+    function calculateTotalCost() {
+      const inputEl = document.querySelector('.shipping-fee-calculator-project-cost-input');
+      let cost = Number(inputEl.value);
+
+      if (cost < 40 && cost > 0) {
+        cost += 10;
+      } else if (cost => 40) {
+        cost;
+      }
+
+      document.querySelector('.shipping-fee-calculator-project-total-cost').
+        innerHTML = `Total Cost: $${cost}`;
+
+      inputEl.value = '';
+    }
+
+    function handleCostKeyDown() {
+      if (event.key === 'Enter') {
+        calculateTotalCost();
+      }
+
+      inputEl.value = '';
     }
   </script>
 </body>
