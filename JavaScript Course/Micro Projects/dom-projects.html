@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM Projects</title>
   <style>
-    html, body {
+    html,
+    body {
       font-family: Arial, Helvetica, sans-serif;
       box-sizing: border-box;
     }
@@ -56,11 +57,15 @@
       background-color: green;
       border-radius: 4px;
       transition: all 0.15s ease;
-      
+
       &:hover {
         cursor: pointer;
         background-color: #59a859;
       }
+    }
+
+    .less-than-zero {
+      color: red;
     }
 
     .text-clone-project-input {
@@ -97,7 +102,7 @@
     <input type="number" class="shipping-fee-calculator-project-cost-input" placeholder="Cost of order"
       onkeydown="handleCostKeyDown()">
     <button class="shipping-fee-calculator-project-cost-calculate-btn" onclick="calculateTotalCost()">Calculate</button>
-    <p class="shipping-fee-calculator-project-total-cost">Total Cost: $0</p>
+    <p class="shipping-fee-calculator-project-total-cost"></p>
   </section>
 
   <section class="text-clone-project">
@@ -120,18 +125,27 @@
 
     function calculateTotalCost() {
       const inputEl = document.querySelector('.shipping-fee-calculator-project-cost-input');
+      const totalCost = document.querySelector('.shipping-fee-calculator-project-total-cost');
       let cost = Number(inputEl.value) * 100;
 
-      if (cost < 4000 && cost > 0) {
+      if (cost < 0) {
+        totalCost.innerText = `Error: cost cannot be less than $0`;
+        totalCost.classList.add('less-than-zero');
+      } else if (cost < 4000) {
+        totalCost.classList.remove('less-than-zero');
         cost += 1000;
+        totalCost.innerHTML = `Total Cost: $${cost / 100}`;
       } else if (cost => 4000) {
+        totalCost.classList.remove('less-than-zero');
         cost;
+        totalCost.innerHTML = `Total Cost: $${cost / 100}`;
       }
 
-      document.querySelector('.shipping-fee-calculator-project-total-cost').
-        innerHTML = `Total Cost: $${cost / 100}`;
+
+
 
       inputEl.value = '';
+
     }
 
     function handleCostKeyDown() {
