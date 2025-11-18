@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ON OFF</title>
+  <style>
+    .items {
+      font-family: arial, Helvetica, sans-serif;
+      font-size: 18px;
+      padding: 8px 22px;
+      border: none;
+      border-radius: 8px;
+      background-color: #e0e0e0;
+      transition: all 0.15s ease;
+    }
+
+    .is-toggled {
+      background-color: #000000;
+      color: white;
+      transition: all 0.15s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="items music" onclick="toggleButton('.music')">Music</button>
+  <button class="items gaming" onclick="toggleButton('.gaming')">Gaming</button>
+  <button class="items tech" onclick="toggleButton('.tech')">Tech</button>
+
+  <script>
+
+    function toggleButton(selector) {
+      const items = document.querySelector(selector);
+
+      if (!items.classList.contains('is-toggled')) {
+        turnOffPreviousButton();
+        items.classList.add('is-toggled');
+      } else {
+        items.classList.remove('is-toggled');
+      }
+    }
+
+    function turnOffPreviousButton() {
+      const previousButton = document.querySelector('.is-toggled');
+
+      if (previousButton) {
+        previousButton.classList.remove('.is-toggled');
+      }
+    }
+  </script>
+</body>
+
+</html>
