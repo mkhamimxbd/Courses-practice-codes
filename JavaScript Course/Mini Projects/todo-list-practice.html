@@ -10,9 +10,25 @@
 <body>
   <input type="text" class="todo-input" onkeydown="addTodoOnEnter()">
   <button class="add-btn" onclick="addTodo()">Add</button>
+  <div class="todoList"></div>
 
   <script>
+  const todoList = document.querySelector('.todoList');
     let todoArray = [];
+
+    renderTodoList();
+
+    function renderTodoList() {
+      let todoArrayHTML = '';
+
+      for (let i = 0; i < todoArray.length; i++) {
+        const todo = todoArray[i];
+        const html = `<p>${todo}</p>`;
+        todoArrayHTML += html;
+      }
+      console.log(todoArrayHTML);
+      todoList.innerHTML = todoArrayHTML;
+    }
 
     function addTodo() {
       const todoInput = document.querySelector('.todo-input');
@@ -27,6 +43,8 @@
       }
 
       todoInput.value = '';
+      
+      renderTodoList();
     }
 
     function addTodoOnEnter() {
