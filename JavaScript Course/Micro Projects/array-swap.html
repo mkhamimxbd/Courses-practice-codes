@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function arraySwap(array) {
+      const lastIndex = array.length - 1;
+
+      const firstValue = array[0];
+      const lastValue = array[lastIndex];
+
+      array[0] = lastValue;
+      array[lastIndex] = firstValue;
+
+      return array;
+    }
+    
+    const myArray = [1, 2, 3, 4];
+    console.log(arraySwap(myArray));
+  </script>
+</body>
+</html>
