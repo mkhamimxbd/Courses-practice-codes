@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function countPositive(nums) {
+      const result = [];
+
+      for (let i = 0; i < nums.length; i++) {
+        if (nums[i] >= 0) {
+          result.push(nums[i]);
+        }
+      }
+
+      return result;
+    }
+
+    const myArray = [-5, 6, -3, 7, 0];
+    console.log(countPositive(myArray));
+  </script>
+</body>
+</html>
