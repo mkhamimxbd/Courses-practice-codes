@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function findStringindex(array, string) {
+      let index = 'String Not Found';
+
+      for (let i = 0; i < array.length; i++) {
+
+        if (array[i] === string) {
+          index = i;
+        }
+      }
+
+      return index;
+    }
+
+    const arr = ['he', 'sdf', 'search', 'muti', 'i love you muti', 'hello', 'i want to kiss you muti'];
+
+    console.log(findStringindex(arr, 'i love you muti')); 
+  </script>
+</body>
+
+</html>
