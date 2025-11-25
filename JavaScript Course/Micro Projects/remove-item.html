@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <script>
     function removeItem(items, item, num) {
@@ -19,13 +21,39 @@
           items.splice(i, 1);
           itemsRemoved++;
         }
-      } 
+      }
       return items;
     }
 
-    const shoppingList = ['eggs', 'condom', 'oil', 'banana', 'condom', 'toy', 'condom', 'lipstick'];
+    function removeItemFromReverse(items, item, num) {
+      items = items.reverse();
+      let itemsRemoved = 0;
 
+      for (let i = 0; i < items.length; i++) {
+        if (itemsRemoved >= num) {
+          break;
+        }
+
+        if (items[i] === item) {
+          items.splice(i, 1);
+          itemsRemoved++;
+        }
+      }
+
+      items = items.reverse();
+      return items;
+    }
+
+
+    const shoppingList = ['eggs', 'condom', 'oil', 'banana', 'condom', 'toy', 'condom', 'lipstick'];
     console.log(removeItem(shoppingList, 'condom', 2));
+
+    const shoppingList2 = ['eggs', 'condom', 'oil', 'banana', 'condom', 'toy', 'condom', 'lipstick'];
+    console.log(removeItemFromReverse(shoppingList2, 'condom', 2));
+
+
+
   </script>
 </body>
+
 </html>
