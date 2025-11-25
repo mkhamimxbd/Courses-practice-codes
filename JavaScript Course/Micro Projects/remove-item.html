@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function removeItem(items, item) {
+      for (let i = 0; i < items.length; i++) {
+        if (items[i] === item) {
+          items.splice(i, 1);
+        }
+      } 
+      return items;
+    }
+
+    const shoppingList = ['eggs', 'oil', 'banana', 'condom', 'toy', 'condom', 'lipstick'];
+
+    console.log(removeItem(shoppingList, 'condom'));
+  </script>
+</body>
+</html>
