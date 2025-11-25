@@ -16,15 +16,16 @@
 
         if (array[i] === string) {
           index = i;
+          break;
         }
       }
 
       return index;
     }
 
-    const arr = ['he', 'sdf', 'search', 'muti', 'i love you muti', 'hello', 'i want to kiss you muti'];
+    const arr = ['he', 'sdf', 'he', 'search', 'muti', 'i love you muti', 'hello', 'muti', 'i want to kiss you muti'];
 
-    console.log(findStringindex(arr, 'i love you muti')); 
+    console.log(findStringindex(arr, 'muti'));
   </script>
 </body>
 
