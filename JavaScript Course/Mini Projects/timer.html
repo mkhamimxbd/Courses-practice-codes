@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer</title>
+  <style>
+    .timer-div {
+      font-size: 162px;
+    }
+  </style>
+</head>
+
+<body>
+  <p>60 seconds timer</p>
+  <!-- <input type="number" class="input"> 
+  <button class="add-btn" onclick="runTimer()">Add</button> -->
+  <div class="timer-div"></div>
+
+  <script>
+    const timerDiv = document.querySelector('.timer-div');
+    // let userInput = document.querySelector('.input');
+    const timerRunTime = 60;
+    
+    let i = 0;
+    
+    const timer = function() {
+
+      if (i <= timerRunTime) {
+        timerDiv.textContent = i;
+        i++;
+      }
+
+    }
+
+    function runTimer() {
+      setInterval(timer, 1000);
+    }
+
+    runTimer()
+
+  </script>
+</body>
+
+</html>
