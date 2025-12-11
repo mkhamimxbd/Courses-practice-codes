@@ -9,9 +9,11 @@
   <button class="start-btn" onclick="changeText('Done')">Start</button>
   <script>
     function changeText(text) {
+      const startBtn = document.querySelector('.start-btn');
       setTimeout(function() {
-        document.querySelector('.start-btn').textContent = text;
+        startBtn.textContent = text;
       }, 1000);
+      startBtn.textContent = 'Loading...';
     }
   </script>
 </body>
