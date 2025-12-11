@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <button class="add-to-cart-btn" onclick="showAdded()">Add to cart</button>
   <p class="js-added-text"></p>
   <script>
+    let isRunning = false;
+    let timoutId;
+
     function showAdded() {
       const addedText = document.querySelector('.js-added-text');
-      
-      setTimeout(function() {
-        addedText.textContent = '';
-      }, 2000);
 
-      addedText.textContent = 'Added';
+      function run() {
+        timeoutId = setTimeout(function () {
+          addedText.textContent = '';
+          isRunning = false;
+        }, 2000);
+        addedText.textContent = 'Added';
+        isRunning = true;
+      }
+
+      if (!isRunning) {
+        run();
+      } else if (isRunning) {
+        clearTimeout(timeoutId);
+        run();
+      }
+
+
     }
   </script>
 </body>
+
 </html>
