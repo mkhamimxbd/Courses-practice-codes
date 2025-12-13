@@ -51,11 +51,27 @@
     // const shoppingList2 = ['eggs', 'condom', 'oil', 'banana', 'condom', 'toy', 'condom', 'lipstick'];
     // console.log(removeItemFromReverse(shoppingList2, 'condom', 2));
 
-    function removeItem(items, toRemove) {
-      return items.filter(value => value !== toRemove);
+    // function removeItem(items, toRemove) {
+    //   return items.filter(value => value !== toRemove);
+    // }
+
+    // console.log(removeItem(['hamim', 'muti'], 'hamim'));
+
+    function removeItem(items, toRemove, num) {
+      let itemsRemoved = 0;
+
+      return items.filter(value => {
+
+        if (value === toRemove && itemsRemoved < num) {
+          itemsRemoved++;
+          return false;
+        }
+
+        return true;
+      });
     }
 
-    console.log(removeItem(['hamim', 'muti'], 'hamim'));
+    console.log(removeItem(['hamim', 'hamim', 'muti', 'hamim'], 'hamim', 1));
 
 
 
