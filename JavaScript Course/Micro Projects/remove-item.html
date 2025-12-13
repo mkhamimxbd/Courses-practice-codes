@@ -9,47 +9,53 @@
 
 <body>
   <script>
-    function removeItem(items, item, num) {
-      let itemsRemoved = 0;
+    // function removeItem(items, item, num) {
+    //   let itemsRemoved = 0;
 
-      for (let i = 0; i < items.length; i++) {
-        if (itemsRemoved >= num) {
-          break;
-        }
+    //   for (let i = 0; i < items.length; i++) {
+    //     if (itemsRemoved >= num) {
+    //       break;
+    //     }
 
-        if (items[i] === item) {
-          items.splice(i, 1);
-          itemsRemoved++;
-        }
-      }
-      return items;
+    //     if (items[i] === item) {
+    //       items.splice(i, 1);
+    //       itemsRemoved++;
+    //     }
+    //   }
+    //   return items;
+    // }
+
+    // function removeItemFromReverse(items, item, num) {
+    //   items = items.reverse();
+    //   let itemsRemoved = 0;
+
+    //   for (let i = 0; i < items.length; i++) {
+    //     if (itemsRemoved >= num) {
+    //       break;
+    //     }
+
+    //     if (items[i] === item) {
+    //       items.splice(i, 1);
+    //       itemsRemoved++;
+    //     }
+    //   }
+
+    //   items = items.reverse();
+    //   return items;
+    // }
+
+
+    // const shoppingList = ['eggs', 'condom', 'oil', 'banana', 'condom', 'toy', 'condom', 'lipstick'];
+    // console.log(removeItem(shoppingList, 'condom', 2));
+
+    // const shoppingList2 = ['eggs', 'condom', 'oil', 'banana', 'condom', 'toy', 'condom', 'lipstick'];
+    // console.log(removeItemFromReverse(shoppingList2, 'condom', 2));
+
+    function removeItem(items, toRemove) {
+      return items.filter(value => value !== toRemove);
     }
 
-    function removeItemFromReverse(items, item, num) {
-      items = items.reverse();
-      let itemsRemoved = 0;
-
-      for (let i = 0; i < items.length; i++) {
-        if (itemsRemoved >= num) {
-          break;
-        }
-
-        if (items[i] === item) {
-          items.splice(i, 1);
-          itemsRemoved++;
-        }
-      }
-
-      items = items.reverse();
-      return items;
-    }
-
-
-    const shoppingList = ['eggs', 'condom', 'oil', 'banana', 'condom', 'toy', 'condom', 'lipstick'];
-    console.log(removeItem(shoppingList, 'condom', 2));
-
-    const shoppingList2 = ['eggs', 'condom', 'oil', 'banana', 'condom', 'toy', 'condom', 'lipstick'];
-    console.log(removeItemFromReverse(shoppingList2, 'condom', 2));
+    console.log(removeItem(['hamim', 'muti'], 'hamim'));
 
 
 
