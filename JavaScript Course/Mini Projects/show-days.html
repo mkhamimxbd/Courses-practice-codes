@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div class="js-date"></div>
-  
-  
-  <script type="module" src="./scripts/show-days.js"></script>
+
+
+  <script type="module">
+    import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+
+
+    function showDate(days) {
+      const daysLater = dayjs().add(days, 'day').format('MMMM DD');
+      return daysLater;
+    }
+
+
+
+    document.querySelector('.js-date')
+      .innerHTML = showDate(2);
+
+  </script>
 </body>
+
 </html>
