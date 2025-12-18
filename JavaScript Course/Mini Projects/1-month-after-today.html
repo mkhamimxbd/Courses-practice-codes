@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div class="js-date"></div>
 
-  <script type="module" src="scripts/1-month-after-today.js"></script>
+  <script type="module">
+    import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+
+    document.querySelector('.js-date')
+      .innerHTML = dayjs().add(1, 'month').format('MMMM DD')
+  </script>
 </body>
+
 </html>
