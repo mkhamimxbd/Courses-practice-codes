@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    body {
+      font-size: 2em;
+
+    }
+  </style>
 </head>
+
 <body>
+  <input type="checkbox" id="subscribe-checkbox">
+  <label for="subscribe-checkbox">Subscribe</label>
+  <p class="result">Click the button to check result</p>
+  <button class="check-result">result</button>
   <script>
-    
+    document.querySelector('.check-result')
+      .addEventListener('click', () => {
+        if (document.querySelector('#subscribe-checkbox').checked) {
+          document.querySelector('.result')
+            .textContent = 'You are subscribed! Thank you!';
+        } else {
+          document.querySelector('.result')
+            .textContent = 'You are not subscribed >:( SUBSCRIBE NOW!';
+        }
+      });
   </script>
 </body>
+
 </html>
