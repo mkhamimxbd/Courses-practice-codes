@@ -15,7 +15,12 @@
     const rollDiceBtn = document.querySelector('.roll-dice-btn');
 
     rollDiceBtn.addEventListener('click', () => {
-      diceNumber.textContent = Math.floor(Math.random()*7);
+      const randomNumber = Math.round(Math.random()*7);
+
+      if (randomNumber !== 0) {
+        diceNumber.textContent = randomNumber;
+        previousDiceNumber = randomNumber;
+      }
     });
   </script>
 </body>
