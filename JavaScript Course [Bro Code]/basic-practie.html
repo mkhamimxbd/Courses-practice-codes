@@ -14,28 +14,24 @@
 
 
   <script>
-    // let username;
+    const minNum = 1
+    const maxNum = 100
 
-    //  do {
-    //   username = window.prompt('Enter your username');
-    // } while (username === '' || username === null)
+    const randomNum = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+    
+    let attempts = 0;
+    let guess;
+    let running = true;
 
-    // console.log(username);
+    while (running) {
+      guess = prompt(`Guess a number between ${minNum} - ${maxNum}`);
+      guess = Number(guess);
 
-    let loggedIn = false;
-    let username;
-    let password;
-
-    while(!loggedIn) {
-      username = prompt('Enter your username');
-      password = prompt('Enter your password');
-
-      if (username === 'wolf' && password === '1415926535') {
-        loggedIn = true;
-        alert(`Welcome ${username}`);
-      } else {
-        alert('Username or password is wrong. Please try again.')
+      if (isNaN(guess)) {
+        prompt('Please enter a valid number')
       }
+
+      running = false;
     }
   </script>
 </body>
