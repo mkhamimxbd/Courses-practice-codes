@@ -9,9 +9,41 @@
   </style>
 </head>
 <body>
-  
+  <label for="user-guess-input" class="guess-input-label">Guess the number</label>
+  <input type="text" class="guess-input">
+  <button class="guess-submit">submit</button>
+  <p class="message"></p>
   <script>
+    const guessInput = document.querySelector('.guess-input');
+    const guessSubmit = document.querySelector('.guess-submit');
+    const message = document.querySelector('.message')
+
+    const minNum = 1;
+    const maxNum = 100;
+    const answer = Math.floor(Math.random() * (maxNum - minNum + 1) + minNum);
     
+    let guess;
+
+    function checkGuess() {
+      guess = Number(guessInput.value);
+
+      if (isNaN(guess)) {
+        message.textContent = `Please enter a valid number.`;
+      } else if (guess === answer) {
+        message.textContent = `${answer} is the correct answer! Congrats!`;
+      } else {
+        message.textContent = `${guess} is not the correct answer. Try again`;
+      }
+    }
+
+    function checkGuessOnEnter() {
+      if (event.key === 'Enter') {
+        checkGuess();
+      }
+    }
+
+    guessSubmit.addEventListener('click', checkGuess);
+    guessInput.addEventListener('keydown', checkGuessOnEnter);
   </script>
 </body>
 </html>
