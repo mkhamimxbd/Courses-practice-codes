@@ -14,21 +14,23 @@
 
 
   <script>
-    const fullName = 'Abdullah Khan'
-    
-    let firstName = fullName.slice(0, fullName.indexOf(' '));
-    let lastName = fullName.slice(fullName.indexOf(' ') + 1);
+    let username = window.prompt('Enter your username:');
 
-    console.log(firstName)
-    console.log(lastName)
+    /* username = username.trim();
 
-    const email = 'mkhamimxbd@protonmail.com';
+    let letter = username.charAt(0);
+    letter = letter.toUpperCase();
 
-    let userName = email.slice(0, email.indexOf('@'));
-    let extension = email.slice(email.indexOf('@') + 1);
-    
-    console.log(userName);
-    console.log(extension);
+    let extraChars = username.slice(1);
+    extraChars = extraChars.toLowerCase();
+
+    username = letter + extraChars;
+
+    console.log(username) */
+
+    // method chaining
+
+    username = username.trim().charAt(0).toUpperCase() + username.trim().slice(1).toLowerCase();
   </script>
 </body>
 
