@@ -14,23 +14,59 @@
 
 
   <script>
-    let username = window.prompt('Enter your username:');
+    const temp = 27;
 
-    /* username = username.trim();
+    // if (temp >= 30) {
+    //   console.log('The weather seems to be hot');
+    // } else if (temp >= 22) {
+    //   console.log('The weather seems to be just fine');
+    // } else if (temp >= 15) {
+    //   console.log('The weather seems cold');
+    // } else if (temp >= 0) {
+    //   console.log('Bro its freezing!');
+    // } else {
+    //   console.log('BRO ITS LITERALLY FREEZING')
+    // }
 
-    let letter = username.charAt(0);
-    letter = letter.toUpperCase();
+    // switch (true) {
+    //   case temp >= 30:
+    //     console.log('The weather seems to be hot');
+    //     break;
+    //   case temp >= 22:
+    //     console.log('The weather seems to be just fine');
+    //     break;
+    //   case temp >= 15:
+    //     console.log('The weather seems cold');
+    //     break;
+    //   case temp >= 0:
+    //     console.log('Bro its freezing!');
+    //     break;
+    //   case temp < 0:
+    //     console.log('BRO ITS LITERALLY FREEZING!')
+    //     break;
+    //   default: 
+    //     console.log('Enter a valid tempurature bruh')
+    // }
 
-    let extraChars = username.slice(1);
-    extraChars = extraChars.toLowerCase();
+    // if (temp >= 0 && temp <= 35) {
+    //   console.log('Tehnically the weather is good');
+    // } else {
+    //   console.log('Thats bad bro')
+    // }
 
-    username = letter + extraChars;
+    if (temp < 0 || temp > 35) {
+      console.log('Thats bad bro!');
+    } else {
+      console.log('Technically the weather is good.')
+    }
 
-    console.log(username) */
+    const isSunny = false;
 
-    // method chaining
-
-    username = username.trim().charAt(0).toUpperCase() + username.trim().slice(1).toLowerCase();
+    if (!isSunny) {
+      console.log('Its cloudy');
+    } else {
+      console.log('its sunny');
+    }
   </script>
 </body>
 
