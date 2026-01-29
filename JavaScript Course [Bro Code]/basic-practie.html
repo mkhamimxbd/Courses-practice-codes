@@ -14,58 +14,28 @@
 
 
   <script>
-    const temp = 27;
+    // let username;
 
-    // if (temp >= 30) {
-    //   console.log('The weather seems to be hot');
-    // } else if (temp >= 22) {
-    //   console.log('The weather seems to be just fine');
-    // } else if (temp >= 15) {
-    //   console.log('The weather seems cold');
-    // } else if (temp >= 0) {
-    //   console.log('Bro its freezing!');
-    // } else {
-    //   console.log('BRO ITS LITERALLY FREEZING')
-    // }
+    //  do {
+    //   username = window.prompt('Enter your username');
+    // } while (username === '' || username === null)
 
-    // switch (true) {
-    //   case temp >= 30:
-    //     console.log('The weather seems to be hot');
-    //     break;
-    //   case temp >= 22:
-    //     console.log('The weather seems to be just fine');
-    //     break;
-    //   case temp >= 15:
-    //     console.log('The weather seems cold');
-    //     break;
-    //   case temp >= 0:
-    //     console.log('Bro its freezing!');
-    //     break;
-    //   case temp < 0:
-    //     console.log('BRO ITS LITERALLY FREEZING!')
-    //     break;
-    //   default: 
-    //     console.log('Enter a valid tempurature bruh')
-    // }
+    // console.log(username);
 
-    // if (temp >= 0 && temp <= 35) {
-    //   console.log('Tehnically the weather is good');
-    // } else {
-    //   console.log('Thats bad bro')
-    // }
+    let loggedIn = false;
+    let username;
+    let password;
 
-    if (temp < 0 || temp > 35) {
-      console.log('Thats bad bro!');
-    } else {
-      console.log('Technically the weather is good.')
-    }
+    while(!loggedIn) {
+      username = prompt('Enter your username');
+      password = prompt('Enter your password');
 
-    const isSunny = false;
-
-    if (!isSunny) {
-      console.log('Its cloudy');
-    } else {
-      console.log('its sunny');
+      if (username === 'wolf' && password === '1415926535') {
+        loggedIn = true;
+        alert(`Welcome ${username}`);
+      } else {
+        alert('Username or password is wrong. Please try again.')
+      }
     }
   </script>
 </body>
