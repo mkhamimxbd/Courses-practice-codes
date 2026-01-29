@@ -14,31 +14,18 @@
 
 
   <script>
-    let score = 34;
-    let letterGrade;
+    let userName = 'Wolf';
 
-    switch(true) {
-      case score >= 90:
-        letterGrade = 'A+';
-        break;
-      case score >= 80:
-        letterGrade = 'A';
-        break;
-      case score >= 60:
-        letterGrade = 'B';
-        break;
-      case score >= 40:
-        letterGrade = 'C';
-        break;
-      case score >= 30:
-        letterGrade = 'D';
-        break;
-      case score < 30:
-        letterGrade = 'F';
-        break;
+    const result = userName.includes(' ');
+
+    if (result) {
+      console.log('Your username cannot contain any space');
+    } else {
+      console.log(userName);
     }
 
-    console.log(`Your score is ${score}. Your grade is ${letterGrade}.`);
+    let phoneNumber = '01760-964512';
+    console.log(phoneNumber.replaceAll('-', ''));
   </script>
 </body>
 
