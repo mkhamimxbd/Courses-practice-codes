@@ -14,36 +14,31 @@
 
 
   <script>
-    let day = '';
+    let score = 34;
+    let letterGrade;
 
-    switch (day) {
-      case 'Monday':
-        console.log('its first day of the week');
+    switch(true) {
+      case score >= 90:
+        letterGrade = 'A+';
         break;
-      case 'Tuesday':
-        console.log('its second day of the week');
+      case score >= 80:
+        letterGrade = 'A';
         break;
-      case 'Wednesday':
-        console.log('its third day of the week');
+      case score >= 60:
+        letterGrade = 'B';
         break;
-      case 'Thursday':
-        console.log('its fourth day of the week');
+      case score >= 40:
+        letterGrade = 'C';
         break;
-      case 'friday':
-        console.log('its fifth day of the week');
+      case score >= 30:
+        letterGrade = 'D';
         break;
-      case 'Saturday':
-        console.log('its sixth day of the week');
+      case score < 30:
+        letterGrade = 'F';
         break;
-      case 'Sunday':
-        console.log('its seventh day of the week');
-        break;
-      case '': 
-        console.log('At least enter a value bro.');
-        break;
-      default:
-        console.log(`${day} is not a valid day of the week. If you think it is, check the spelling. The first letter should be capital, because the developer isn't smart enough to implement the feature, blah blah blah...`)
     }
+
+    console.log(`Your score is ${score}. Your grade is ${letterGrade}.`);
   </script>
 </body>
 
