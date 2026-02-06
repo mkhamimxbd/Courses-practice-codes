@@ -6,15 +6,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guess the number</title>
   <style>
+    .maximum-value-input-div, 
+    .minimum-value-input-div,
+    .generate-number-btn {
+      margin: 0 0 1rem 0;
+    }
 
+    .guess-input-div {
+      margin: 1rem 0 0 0;
+    }
+
+    #max-num-input,
+    #min-num-input,
+    #guess-input {
+      padding: 0.5rem 2rem;
+    }
+    
   </style>
 </head>
 
 <body>
-  
+  <div class="min-max-input-div">
+    <div class="maximum-value-input-div">
+      <label for="max-num-input">Choose a maximum vlaue:</label>
+      <input type="number" id="max-num-input">
+    </div>
+    <div class="minimum-value-input-div">
+      <label for="min-num-input">Choose a minimum vlaue:</label>
+      <input type="number" id="min-num-input">
+    </div>
+  </div>
+  <button class="generate-number-btn">Generate Number</button>
+  <div class="guess-input-div">
+    <label for="guess-input">Guess the number:</label>
+    <input type="number" id="guess-input">
+    <button class="check-answer-btn">Check</button>
+  </div>
+  <div class="message-el"></div>
 
   <script>
-    
+    // alert('To play, choose a maximum and a minimum number, then guess the computer generated number between the maximum and minimum number.');
+
+    const maxNumInput = document.querySelector('#max-num-input');
+    const minNumInput = document.querySelector('#min-num-input');
+    const guessInput = document.querySelector('#guess-input');
+    const generateNumberBtn = document.querySelector('.generate-number-btn');
+    const checkAnswerBtn = document.querySelector('.check-answer-btn');
+    const messageEl = document.querySelector('.message-el');
+
+    let maxNum;
+    let minNum;
+    let answer;
+
+    function generateAnswer() {
+      maxNum = Number(maxNumInput.value);
+      minNum = Number(minNumInput.value);
+
+      const answer = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+
+      return answer;
+    }
+
+    function checkAnswer(answer) {
+      const guess = Number(guessInput.value);
+
+      if (guess === answer) {
+        console.log('CORRECT GUESS!');
+      } else {
+        console.log('Wrong guess :(');
+      }
+    }
+
+    generateNumberBtn.addEventListener('click', () => {
+      answer = generateAnswer();
+      console.log(answer)
+    });
+
+    checkAnswerBtn.addEventListener('click', () => {
+      checkAnswer(answer);
+    });
+
   </script>
 </body>
 
