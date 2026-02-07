@@ -14,25 +14,7 @@
 
 
   <script>
-    const minNum = 1
-    const maxNum = 100
-
-    const randomNum = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
     
-    let attempts = 0;
-    let guess;
-    let running = true;
-
-    while (running) {
-      guess = prompt(`Guess a number between ${minNum} - ${maxNum}`);
-      guess = Number(guess);
-
-      if (isNaN(guess)) {
-        prompt('Please enter a valid number')
-      }
-
-      running = false;
-    }
   </script>
 </body>
 
