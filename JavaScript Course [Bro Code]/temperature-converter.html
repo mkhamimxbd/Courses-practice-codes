@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Temperature Converter</title>
   <style>
-
+    body {
+      font-family: 'Courier New', Courier, monospace;
+    }
   </style>
 </head>
+
 <body>
-  <input type="number" class="user-input js-user-input" placeholder="Enter Celsius">
+  <input type="number" class="user-input js-user-input" placeholder="Enter Temperature">
   <button class="convert-btn js-convert-btn">Convert</button>
+  <div class="converion-unit-div">
+    <input type="radio" id="CtoF" value="CtoF" name="conversion-type-radio">
+    <label for="CtoF">Celsius to Fahrenheit</label>
+    <input type="radio" id="FtoC" value="FtoC" name="conversion-type-radio">
+    <label for="FtoC">Fahrenheit to Celsius</label>
+  </div>
   <div class="display-output-el js-display-output-el"></div>
 
   <script>
     const userInput = document.querySelector('.js-user-input');
     const convertBtn = document.querySelector('.js-convert-btn');
     const displayOutputEl = document.querySelector('.js-display-output-el');
+    const CtoF = document.querySelector('#CtoF');
+    const FtoC = document.querySelector('#FtoC');
 
-    function convertToFahrenheit() {
-      const fahrenheit = Number(userInput.value) * 1.8 + 32;
-      displayOutputEl.textContent = `Fahrenheit: ${fahrenheit}`;
+    let temp;
+
+    function convert() {
+      if (CtoF.checked) {
+        temp = Number(userInput.value) * (9/5) + 32;
+        displayOutputEl.textContent = `Fahrenheit: ${temp.toFixed(1)}`;
+      } else if (FtoC.checked) {
+        temp = (Number(userInput.value) - 32) * (5/9);
+        displayOutputEl.textContent = `Celsius: ${temp.toFixed(1)}`;
+      } else {
+        displayOutputEl.textContent = `Please select an unit to convert to.`;
+      }
     }
 
-    convertBtn.addEventListener('click', () => {
-      convertToFahrenheit();
-    });
-
-    userInput.addEventListener('keydown', () => {
+    function convertOnEnter() {
       if (event.key === 'Enter') {
-        convertToFahrenheit();
+        convert();
       }
-    })
+    }
+
+    convertBtn.addEventListener('click', convert);
+    userInput.addEventListener('keydown', convertOnEnter);
   </script>
 </body>
+
 </html>
