@@ -9,9 +9,29 @@
   </style>
 </head>
 <body>
-  
-  <script>
+  <input type="number" class="user-input js-user-input" placeholder="Enter Celsius">
+  <button class="convert-btn js-convert-btn">Convert</button>
+  <div class="display-output-el js-display-output-el"></div>
 
+  <script>
+    const userInput = document.querySelector('.js-user-input');
+    const convertBtn = document.querySelector('.js-convert-btn');
+    const displayOutputEl = document.querySelector('.js-display-output-el');
+
+    function convertToFahrenheit() {
+      const fahrenheit = Number(userInput.value) * 1.8 + 32;
+      displayOutputEl.textContent = `Fahrenheit: ${fahrenheit}`;
+    }
+
+    convertBtn.addEventListener('click', () => {
+      convertToFahrenheit();
+    });
+
+    userInput.addEventListener('keydown', () => {
+      if (event.key === 'Enter') {
+        convertToFahrenheit();
+      }
+    })
   </script>
 </body>
 </html>
