@@ -1,0 +1,28 @@
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 100px 0 0 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.roll-btn {
+  font-size: 1.5rem;
+  padding: 6px 10px;
+  border-radius: 10px;
+  outline: none;
+  border: 0.3px solid #4e4e4e;
+  background-color: #f3f3f3;
+  color: #525252;
+}
+
+.dice-img {
+  width: 100px;
+}
