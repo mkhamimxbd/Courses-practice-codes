@@ -11,10 +11,25 @@
 </head>
 
 <body>
-
+  <div class="result-div"></div>
 
   <script>
-    
+    const resultDiv = document.querySelector('.result-div');
+
+    function sum(callback, x, y) {
+      const result = x + y;
+      callback(result);
+    }
+
+    function displayConsole(result) {
+      console.log(result);
+    }
+
+    function displayDOM(result) {
+      resultDiv.textContent = `Result: ${result}`;
+    }
+
+    sum(displayDOM, 10, 10);
   </script>
 </body>
 
