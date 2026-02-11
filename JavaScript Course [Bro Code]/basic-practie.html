@@ -11,25 +11,31 @@
 </head>
 
 <body>
-  <div class="result-div"></div>
+  <div class="div"></div>
 
   <script>
-    const resultDiv = document.querySelector('.result-div');
+    const div = document.querySelector('.div');
 
-    function sum(callback, x, y) {
-      const result = x + y;
-      callback(result);
+    const fruits = ['apple', 'banana', 'orange', 'melon'];
+
+    function upperCase(el, i, arr) {
+      arr[i] = el.toUpperCase();
     }
 
-    function displayConsole(result) {
-      console.log(result);
+    function lowerCase(el, i, arr) {
+      arr[i] = el.toLowerCase();
     }
 
-    function displayDOM(result) {
-      resultDiv.textContent = `Result: ${result}`;
+    function display(el) {
+      console.log(el);
     }
 
-    sum(displayDOM, 10, 10);
+    function capitalize(el, i, arr) {
+      arr[i] = el.charAt(0).toUpperCase() + el.slice(1);
+    }
+    
+    fruits.forEach(capitalize)
+    fruits.forEach(display);
   </script>
 </body>
 
