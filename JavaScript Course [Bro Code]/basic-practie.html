@@ -13,41 +13,96 @@
 <body>
 
   <script>
-    class School {
-      constructor(students, avgGPA) {
-        this.students = students;
-        this.avgGPA = avgGPA;
+    class Rectriangle {
+      constructor(width, height) {
+        this.width = width;
+        this.height = height;
+      }
+
+      set width(newWidth) {
+        if (newWidth > 0) {
+          this._width = newWidth;
+        } else {
+          console.error('Width must be a positive number');
+        }
+      }
+
+      set height(newHeight) {
+        if (newHeight > 0) {
+          this._height = newHeight;
+        } else {
+          console.error('Height must be a positive number');
+        }
+      }
+
+      get width() {
+        return this._width;
+      }
+
+      get height() {
+        return this._height;
       }
     }
 
-    class Grade1 extends School {
-      constructor(students, avgGPA, teacher) {
-        super(students, avgGPA);
-        this.teacher = teacher;
-      }
-    }
+    const rectriangle = new Rectriangle(100, 70);
 
-    class Grade2 extends School {
-      constructor(students, avgGPA, captain) {
-        super(students, avgGPA);
-        this.captain = captain;
-      }
-    }
-
-    class Grade3 extends School {
-      constructor(students, avgGPA, topStudent) {
-        super(students, avgGPA);
-        this.topStudent = topStudent;
-      }
-    }
+    console.log(rectriangle.width);
+    console.log(rectriangle.height);
     
-    const grade1 = new Grade1(30, 3.5, 'Mutiara');
-    const grade2 = new Grade2(20, 3.0, 'Hamim');
-    const grade3 = new Grade3(10, 2.5, 'Niaz');
+    class Person {
+      constructor(name, age, job) {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+      }
 
-    console.log(grade1.students);
-    console.log(grade1.avgGPA);
-    console.log(grade1.teacher);
+      set name(newName) {
+        if (isNaN(newName)) {
+          this._name = newName;
+        } else {
+          console.error('Enter your name correctly fool!');
+        }
+      }
+
+      set age(newAge) {
+        if (newAge === true || newAge === false) {
+          console.error('Enter your age correctly nigga!');
+        } else if (newAge > 0) {
+          this._age = newAge;
+        } else {
+          console.error('Enter your age correctly nigga!');
+        }
+      }
+
+      set job(newJob) {
+        if (isNaN(newJob)) {
+          this._job = newJob;
+        } else {
+          console.error('Enter your job correctly bitch!');
+        }
+      }
+
+      get name() {
+        return this._name;
+      }
+
+      get age() {
+        return this._age;
+      }
+
+      get job() {
+        return this._job;
+      }
+
+    }
+
+    const me = new Person('Hamim', 17, 'Cyber Security');
+
+    console.log(`
+Name: ${me.name}
+age: ${me.age}
+job: ${me.job}
+    `);
   </script>
 </body>
 
