@@ -13,50 +13,59 @@
 <body>
 
   <script>
-    class StaticMathUtils {
-      static PI = 3.1415926535;
-      static student = {
-        id: 345,
-        name: 'sadfh',
-        class: 6,
-        hobby: 'fishing'
+    class Human {
+      alive = true;
+      speak = {
+        good() {
+          console.log(`Hello! I am ${this.name}`);
+        },
+        sad() {
+          console.log('Oh no. I fell on the ground :(');
+        },
+        racist() {
+          console.log('Wassap my nigga?');
+        }
+      }
+
+      do = {
+        dance() {
+          console.log('I am dancing!');
+        },
+        sing() {
+          console.log('la la hmmuhm lala');
+        }
+      }
+
+      name() {
+        console.log(`My name is ${this.name}`);
+      }
+
+      age() {
+        console.log(`I am ${this.age} years old.`);
+      }
+
+      job() {
+        console.log(`${this.job === 'unemployed' ? 'I am unemployed... AND BROKE' : `I work as a ${this.job}`}`);
+      }
+
+
+      die() {
+        console.log(`I am dying in the age of ${this.age}`);
       }
     }
 
-    class MathUtils {
-      PI = 3.1415926535;
-
-      student = {
-        id: 345,
-        name: 'sadfh',
-        class: 6,
-        hobby: 'fishing'
-      }
+    class Man extends Human {
+      name = 'Hamim';
+      age = 17;
+      job = 'unemployed';
     }
 
-    const MU1 = new MathUtils();
+    const man = new Man();
 
-    console.log(MU1.student.name);
-    console.log(StaticMathUtils.student.name);
-
-    class User {
-      static userCount = 0;
-
-      constructor(username, password) {
-        this.username = username,
-        this.password = password
-
-        User.userCount++;
-      }
-
-    }
-
-    const user1 = new User('mkhamim_', 'laptopgtav');
-    const user2 = new User('mutiaraarista', 'lumut3624');
-
-    console.log(user1.username);
-
-    console.log(User.userCount)
+    man.speak.good()
+    man.die();
+    man.alive = false
+    console.log(man.alive);
 
   </script>
 </body>
