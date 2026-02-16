@@ -11,12 +11,27 @@
 </head>
 
 <body>
-  <div class="div"></div>
 
   <script>
-    const div = document.querySelector('.div');
+    function Student(name, grade, id, major, hasPaid, hobby) {
+      this.name = name,
+      this.grade = grade,
+      this.id = id,
+      this.major = major,
+      this.hasPaid = hasPaid,
+      this.hobby = hobby
+    }
 
+    const S0001 = new Student('Hamim', 10, 839547, 'science', true, 'Video games');
 
+    console.log(`
+Name: ${S0001.name}
+Grade: ${S0001.grade}
+ID: ${S0001.id}
+Major: ${S0001.major}
+Fee: ${S0001.hasPaid ? 'Paid' : 'Due'}
+Hobby: ${S0001.hobby ? S0001.hobby : 'Prefer not to say'}
+    `);
   </script>
 </body>
 
