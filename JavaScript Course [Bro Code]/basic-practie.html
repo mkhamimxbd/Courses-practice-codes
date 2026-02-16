@@ -13,43 +13,50 @@
 <body>
 
   <script>
-    class Product {
-      constructor(name, price, isAvailable) {
-        this.name = name,
-          this.price = price,
-          this.isAvailable = isAvailable
+    class StaticMathUtils {
+      static PI = 3.1415926535;
+      static student = {
+        id: 345,
+        name: 'sadfh',
+        class: 6,
+        hobby: 'fishing'
       }
+    }
 
-      calculateTax(taxRate) {
-        const priceInCents = Math.round(this.price * 100);
-        const taxInCents = taxRate / 100;
-        const finalPrice = (priceInCents * (1 + taxInCents))  / 100;
+    class MathUtils {
+      PI = 3.1415926535;
 
-        return finalPrice;
+      student = {
+        id: 345,
+        name: 'sadfh',
+        class: 6,
+        hobby: 'fishing'
       }
+    }
 
-      display() {
-        console.log(`
-Name: ${this.name}
-Price: $${this.price.toFixed(2)}
-Final price after tax: $${this.calculateTax(10).toFixed(2)}
-${this.isAvailable ? 'The product is availbale!' : 'Sorry, the product is currently not available.'}
-        `);
-      }
+    const MU1 = new MathUtils();
 
-      placeOrder() {
-        console.log(`
-You ordered a ${this.name}. ${this.isAvailable ? 'We are currently processing your order!' : 'Sorry, the item you ordered is not currently available.'} 
-        `);
+    console.log(MU1.student.name);
+    console.log(StaticMathUtils.student.name);
+
+    class User {
+      static userCount = 0;
+
+      constructor(username, password) {
+        this.username = username,
+        this.password = password
+
+        User.userCount++;
       }
 
     }
 
-    const favShirt = new Product('Black t-shirt', 19.50, false);
+    const user1 = new User('mkhamim_', 'laptopgtav');
+    const user2 = new User('mutiaraarista', 'lumut3624');
 
-    favShirt.display();
-    favShirt.placeOrder();
+    console.log(user1.username);
 
+    console.log(User.userCount)
 
   </script>
 </body>
