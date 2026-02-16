@@ -13,60 +13,41 @@
 <body>
 
   <script>
-    class Human {
-      alive = true;
-      speak = {
-        good() {
-          console.log(`Hello! I am ${this.name}`);
-        },
-        sad() {
-          console.log('Oh no. I fell on the ground :(');
-        },
-        racist() {
-          console.log('Wassap my nigga?');
-        }
-      }
-
-      do = {
-        dance() {
-          console.log('I am dancing!');
-        },
-        sing() {
-          console.log('la la hmmuhm lala');
-        }
-      }
-
-      name() {
-        console.log(`My name is ${this.name}`);
-      }
-
-      age() {
-        console.log(`I am ${this.age} years old.`);
-      }
-
-      job() {
-        console.log(`${this.job === 'unemployed' ? 'I am unemployed... AND BROKE' : `I work as a ${this.job}`}`);
-      }
-
-
-      die() {
-        console.log(`I am dying in the age of ${this.age}`);
+    class School {
+      constructor(students, avgGPA) {
+        this.students = students;
+        this.avgGPA = avgGPA;
       }
     }
 
-    class Man extends Human {
-      name = 'Hamim';
-      age = 17;
-      job = 'unemployed';
+    class Grade1 extends School {
+      constructor(students, avgGPA, teacher) {
+        super(students, avgGPA);
+        this.teacher = teacher;
+      }
     }
 
-    const man = new Man();
+    class Grade2 extends School {
+      constructor(students, avgGPA, captain) {
+        super(students, avgGPA);
+        this.captain = captain;
+      }
+    }
 
-    man.speak.good()
-    man.die();
-    man.alive = false
-    console.log(man.alive);
+    class Grade3 extends School {
+      constructor(students, avgGPA, topStudent) {
+        super(students, avgGPA);
+        this.topStudent = topStudent;
+      }
+    }
+    
+    const grade1 = new Grade1(30, 3.5, 'Mutiara');
+    const grade2 = new Grade2(20, 3.0, 'Hamim');
+    const grade3 = new Grade3(10, 2.5, 'Niaz');
 
+    console.log(grade1.students);
+    console.log(grade1.avgGPA);
+    console.log(grade1.teacher);
   </script>
 </body>
 
