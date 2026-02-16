@@ -13,25 +13,44 @@
 <body>
 
   <script>
-    function Student(name, grade, id, major, hasPaid, hobby) {
-      this.name = name,
-      this.grade = grade,
-      this.id = id,
-      this.major = major,
-      this.hasPaid = hasPaid,
-      this.hobby = hobby
+    class Product {
+      constructor(name, price, isAvailable) {
+        this.name = name,
+          this.price = price,
+          this.isAvailable = isAvailable
+      }
+
+      calculateTax(taxRate) {
+        const priceInCents = Math.round(this.price * 100);
+        const taxInCents = taxRate / 100;
+        const finalPrice = (priceInCents * (1 + taxInCents))  / 100;
+
+        return finalPrice;
+      }
+
+      display() {
+        console.log(`
+Name: ${this.name}
+Price: $${this.price.toFixed(2)}
+Final price after tax: $${this.calculateTax(10).toFixed(2)}
+${this.isAvailable ? 'The product is availbale!' : 'Sorry, the product is currently not available.'}
+        `);
+      }
+
+      placeOrder() {
+        console.log(`
+You ordered a ${this.name}. ${this.isAvailable ? 'We are currently processing your order!' : 'Sorry, the item you ordered is not currently available.'} 
+        `);
+      }
+
     }
 
-    const S0001 = new Student('Hamim', 10, 839547, 'science', true, 'Video games');
+    const favShirt = new Product('Black t-shirt', 19.50, false);
 
-    console.log(`
-Name: ${S0001.name}
-Grade: ${S0001.grade}
-ID: ${S0001.id}
-Major: ${S0001.major}
-Fee: ${S0001.hasPaid ? 'Paid' : 'Due'}
-Hobby: ${S0001.hobby ? S0001.hobby : 'Prefer not to say'}
-    `);
+    favShirt.display();
+    favShirt.placeOrder();
+
+
   </script>
 </body>
 
