@@ -13,96 +13,57 @@
 <body>
 
   <script>
-    class Rectriangle {
-      constructor(width, height) {
-        this.width = width;
-        this.height = height;
-      }
+    let x = 5;
+    let y = 10;
 
-      set width(newWidth) {
-        if (newWidth > 0) {
-          this._width = newWidth;
-        } else {
-          console.error('Width must be a positive number');
-        }
-      }
+    [x, y] = [y, x]
 
-      set height(newHeight) {
-        if (newHeight > 0) {
-          this._height = newHeight;
-        } else {
-          console.error('Height must be a positive number');
-        }
-      }
+    console.log(`x: ${x} | y: ${y}`);
 
-      get width() {
-        return this._width;
-      }
 
-      get height() {
-        return this._height;
-      }
+    const colors = ['red', 'green', 'blue', 'white', 'black'];
+    console.log(colors);
+
+    // [colors[0], colors[4]] = [colors[4], colors[0]]
+    // console.log(colors);
+
+
+    const people = ['Hamim', 'Rudy', 'Ana', 'Muti', 'Tanti', 'Item', 'Jony'];
+
+    const [me, love, cat, father] = [people[0], people[3], people[5], people[2]]
+
+    console.log(`My name is ${me}, and my love's name is ${love}. Her cat's name is ${cat}, and her father's name is ${father}`);
+
+    const [r, g, b, w, bl] = colors;
+    console.log(r)
+    console.log(g)
+    console.log(b)
+    console.log(w)
+    console.log(bl)
+
+
+    const E001 = {
+      name: 'Hamim',
+      age: 17,
+      job: 'Cyber Security'
     }
 
-    const rectriangle = new Rectriangle(100, 70);
-
-    console.log(rectriangle.width);
-    console.log(rectriangle.height);
-    
-    class Person {
-      constructor(name, age, job) {
-        this.name = name;
-        this.age = age;
-        this.job = job;
-      }
-
-      set name(newName) {
-        if (isNaN(newName)) {
-          this._name = newName;
-        } else {
-          console.error('Enter your name correctly fool!');
-        }
-      }
-
-      set age(newAge) {
-        if (newAge === true || newAge === false) {
-          console.error('Enter your age correctly nigga!');
-        } else if (newAge > 0) {
-          this._age = newAge;
-        } else {
-          console.error('Enter your age correctly nigga!');
-        }
-      }
-
-      set job(newJob) {
-        if (isNaN(newJob)) {
-          this._job = newJob;
-        } else {
-          console.error('Enter your job correctly bitch!');
-        }
-      }
-
-      get name() {
-        return this._name;
-      }
-
-      get age() {
-        return this._age;
-      }
-
-      get job() {
-        return this._job;
-      }
-
+    const E002 = {
+      name: 'Mutiara',
+      age: 24,
+      job: 'Administrator'
     }
 
-    const me = new Person('Hamim', 17, 'Cyber Security');
+    function displayEmployee({name, age, job}) {
+      console.log(`
+Name: ${name}
+Age: ${age}
+Job: ${typeof job === 'string' && job.length > 0 ? job : 'Unemployed'}
+      `);
+    }
 
-    console.log(`
-Name: ${me.name}
-age: ${me.age}
-job: ${me.job}
-    `);
+    displayEmployee(E001);
+    displayEmployee(E002);
   </script>
 </body>
 
